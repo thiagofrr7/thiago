@@ -1,0 +1,147 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("bgcorecore.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat:
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .titulo-card {
+    background-color: rgba(255, 255, 255, 0.8); /* fundo branco translúcido */
+    padding: 20px 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+    text-align: top;
+    backdrop-filter: blur(4px); /* opcional: efeito vidro fosco */
+    border: 2px solid #fff;
+    max-width: 90%;
+}
+
+  .titulo-suave {
+    font-size: 100px;
+    font-weight: bold;
+    background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+    color: red;
+    text-align: top;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: arcoiris 5s linear infinite;
+    margin-bottom: 90px;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: aparecerSuave 2s ease forwards;
+}
+
+    .titulo-suave2 {
+    font-size: 50px;
+    font-weight: bold;
+    background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+    color: red;
+    text-align: top;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: arcoiris 5s linear infinite;
+    margin-bottom: 90px;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: aparecerSuave 2s ease forwards;}
+
+@keyframes arcoiris {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+/* Animação de aparição suave */
+@keyframes aparecerSuave {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animação de aparição suave */
+@keyframes aparecerSuave2 {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+  
+  
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+  .pingente {
+    position: relative;
+    width: 120px;
+    height: 100px;
+    cursor: pointer;
+    perspective: 1000px;
+  }
+  
+  .metade {
+    position: absolute;
+    width: 60px;
+    height: 100px;
+    background-color: #ff4b5c;
+    top: 0;
+    transition: transform 1s ease;
+    clip-path: path("M60,30 C60,0 0,0 0,30 C0,50 60,90 60,100 Z");
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 2;
+  }
+  
+  .direita {
+    right: 0;
+    clip-path: path("M0,30 C0,0 60,0 60,30 C60,50 0,90 0,100 Z");
+    transform-origin: left center;
+  }
+  
+  .esquerda {
+    left: 0;
+    transform-origin: right center;
+  }
+  
+  .pingente.aberto .esquerda {
+    transform: rotateY(-160deg);
+  }
+  
+  .pingente.aberto .direita {
+    transform: rotateY(160deg);
+  }
+  
+  .mensagem-card {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fffbea;
+    color: #333;
+    padding: 15px;
+    width: 180px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    transform: translate(-50%, 10px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    z-index: 3;
+  }
+  
+  .pingente.aberto .mensagem-card {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
